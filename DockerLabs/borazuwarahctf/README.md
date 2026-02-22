@@ -94,7 +94,8 @@ steghide info imagen.jpeg
 
 * Con el tercer comando, hemos encontrado que en el interior de la imagen hay un archivo txt oculto.
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260215234757.png]*
+*<img width="454" height="192" alt="Pasted image 20260215234757" src="https://github.com/user-attachments/assets/038edc06-d009-4d0d-8a22-fd7ee5cce3ea" />
+*
 
 Ahora con ese nombre de usuario y ese archivo txt vamos a empezar a probar qué encontramos. Utilizamos los siguientes comandos para extraer y mirar el contenido del archivo txt.
 
