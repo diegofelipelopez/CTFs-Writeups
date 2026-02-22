@@ -104,7 +104,7 @@ steghide extract -sf imagen.jpeg
 cat secreto.txt
 ```
 
-*<img width="454" height="192" alt="Pasted image 20260215234757" src="https://github.com/user-attachments/assets/e1297295-c1fa-4705-a5c3-93654b36ce62" />
+*<img width="385" height="182" alt="Pasted image 20260215235506" src="https://github.com/user-attachments/assets/a963e571-3c71-4fe9-af62-e08ccdcca688" />
 *
 
 Observamos que por el lado del txt no obtuvimos más información.
