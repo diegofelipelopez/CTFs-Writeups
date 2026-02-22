@@ -17,7 +17,8 @@ Lanzamos un escaneo general con nmap.
 sudo nmap -p- -sS -sC -sV --min-rate 5000 -n -vvv -Pn 172.17.0.2
 ```
 
-*obsidian://open?vault=Apuntes&file=Recursos%2FPasted%20image%2020260215222128.png*
+*[<img width="574" height="59" alt="Pasted image 20260215222128" src="https://github.com/user-attachments/assets/c79378a9-f559-4bf8-a314-8bb419acff08" />
+]*
 
 Encontramos 2 servicios funcionado, con sus respectivos puertos abiertos.
 
