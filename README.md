@@ -10,5 +10,5 @@ Resolución paso a paso de máquinas de práctica y retos de seguridad ofensiva.
 ## 🔴 TryHackMe
 * [📁 Entrar a la carpeta de TryHackMe](./TryHackMe)
 
-## 🔵 CybersDefenders
-* [📁 Entrar a la carpeta de CybersDefenders](./CybersDefenders)
+## 🔵 CyberDefenders
+* [📁 Entrar a la carpeta de CybersDefenders](./CyberDefenders)
