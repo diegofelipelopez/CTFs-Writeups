@@ -1,6 +1,8 @@
 # 🚩 CTF Writeup: Tproot
 
-> **Plataforma:** Dockerlabs | **OS:** Linux | **Nivel:** Muy Fácil
+> **Plataforma:** Dockerlabs 
+> **OS:** Linux 
+> **Nivel:** Muy Fácil
 > **Cadena de Ataque:** Escaneo de puertos ➔ Detección de vsftpd 2.3.4 vulnerable ➔ Explotación de backdoor (CVE-2011-2523) �accede como root
 
 ---
