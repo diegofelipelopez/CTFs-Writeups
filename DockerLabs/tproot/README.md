@@ -26,13 +26,15 @@
     sudo nmap -p80 --script=vuln 172.17.0.2 
     ```
     El resultado fue:
-    ![[Pasted image 20260318225140.png]]
+<img width="581" height="293" alt="Pasted image 20260318225140" src="https://github.com/user-attachments/assets/b00fdb6c-6acd-4574-8417-8640dce65c49" />
+
     No encontró nada inicialmente por el puerto 80. Vamos con el escaneo al otro puerto:
     ```bash
     sudo nmap -p21 --script=vuln 172.17.0.2 
     ```
     Vemos que ha encontrado algo interesante:
-    ![[Pasted image 20260318230149.png]]
+<img width="948" height="446" alt="Pasted image 20260318230149" src="https://github.com/user-attachments/assets/bf6dde46-9461-4c1e-8bec-a9bdaa96a37c" />
+
     Tenemos un CVE para investigar y explotar. ¡Vamos a ello!
 
 - [ ] **3. CVE encontrado**
@@ -50,7 +52,8 @@
     ```
     
     ¡Ha funcionado, bingo! Ya somos root:
-    ![[Pasted image 20260318233442.png]]
+<img width="385" height="171" alt="Pasted image 20260318233442" src="https://github.com/user-attachments/assets/d766320d-6ada-44fb-80b3-4e2193c29e37" />
+
 
 ---
 
