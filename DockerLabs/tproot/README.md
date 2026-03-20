@@ -28,11 +28,13 @@
     El resultado fue:
 <img width="581" height="293" alt="Pasted image 20260318225140" src="https://github.com/user-attachments/assets/b00fdb6c-6acd-4574-8417-8640dce65c49" />
 
-No encontró nada inicialmente por el puerto 80. Vamos con el escaneo al otro puerto:
+    No encontró nada inicialmente por el puerto 80. Vamos con el escaneo al otro puerto:
+       
         ```bash
         sudo nmap -p21 --script=vuln 172.17.0.2 
         ```
-Vemos que ha encontrado algo interesante:
+        
+    Vemos que ha encontrado algo interesante:
 <img width="948" height="446" alt="Pasted image 20260318230149" src="https://github.com/user-attachments/assets/bf6dde46-9461-4c1e-8bec-a9bdaa96a37c" />
 
     Tenemos un CVE para investigar y explotar. ¡Vamos a ello!
