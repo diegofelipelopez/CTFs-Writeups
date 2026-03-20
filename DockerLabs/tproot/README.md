@@ -16,7 +16,8 @@
     sudo nmap -p- -sS -sC -sV --min-rate 5000 -n -vvv -Pn 172.17.0.2
     ```
     Nos da como resultado lo siguiente:
-    ![[Pasted image 20260318223429.png|666]]
+<img width="785" height="817" alt="Pasted image 20260318223429" src="https://github.com/user-attachments/assets/45fc418c-927c-4ba9-bc4a-a4cd87b8cf5f" />
+
     Nos muestra que hay 2 servicios corriendo en donde podemos empezar a buscar cositas: el primero es FTP (puerto 21) y el segundo es HTTP (puerto 80). El segundo nos indica que puede haber alojada una página web.
 
 - [ ] **2. Reconocimiento y escaneo dirigido**
