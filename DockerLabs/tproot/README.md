@@ -29,6 +29,7 @@
 <img width="581" height="293" alt="Pasted image 20260318225140" src="https://github.com/user-attachments/assets/b00fdb6c-6acd-4574-8417-8640dce65c49" />
 
     No encontró nada inicialmente por el puerto 80. Vamos con el escaneo al otro puerto:
+    
     ```bash
     sudo nmap -p21 --script=vuln 172.17.0.2 
     ```
