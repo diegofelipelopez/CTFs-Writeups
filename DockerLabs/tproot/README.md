@@ -10,7 +10,7 @@
 
 ## 📝 Ejecución y Explotación
 
-- [ ] **1. Reconocimiento y enumeración**
+- [ ] **1. Reconocimiento y enumeración:**
     Realizamos el escaneo inicial con nmap con el comando:
     ```bash
     sudo nmap -p- -sS -sC -sV --min-rate 5000 -n -vvv -Pn 172.17.0.2
