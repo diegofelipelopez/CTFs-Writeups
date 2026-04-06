@@ -77,7 +77,8 @@ Probamos esas credenciales y sucede la magia:
 
 ## 🧠 Lecciones Aprendidas & Blue Team
 
-**Concepto Nuevo:** Explotación de la vulnerabilidad **CVE-2018-15473** en OpenSSH < 7.7 utilizando el módulo auxiliar `ssh_enumusers` de Metasploit para descubrir usuarios válidos en el sistema sin poseer credenciales previas.
+**Concepto Nuevo:** 
+* *Explotación de la vulnerabilidad **CVE-2018-15473** en OpenSSH < 7.7 utilizando el módulo auxiliar `ssh_enumusers` de Metasploit para descubrir usuarios válidos en el sistema sin poseer credenciales previas.
 * Verificación de que comprometer a un usuario de bajos privilegios ("lovely") puede ser un distractor cuando la cuenta de máxima autoridad (`root`) carece de políticas de contraseñas robustas y es susceptible a fuerza bruta directa con listas conocidas (RockYou).
 
 **Cómo Parcharlo (Fix):** 1. **Actualización de Software:** Actualizar el servicio OpenSSH a una versión superior a la 7.7 para mitigar la vulnerabilidad de enumeración de usuarios (CVE-2018-15473).
