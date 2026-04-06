@@ -17,7 +17,7 @@ sudo nmap -p- -sS -sC -sV -T5 -n -vvv -Pn 172.17.0.2
 ```
 Nos encuentra el puerto 22 abierto:
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260404194631.png]*
+<img width="959" height="236" alt="Pasted image 20260404194631" src="https://github.com/user-attachments/assets/4ab5850b-7f29-4c50-beaa-48c633def6d3" />
 
 ### 2. Búsqueda de vectores de ataque.
 Realizamos un escaneo con nmap dirigido al puerto 22.
@@ -26,7 +26,7 @@ sudo nmap -p22 --script=vuln 172.17.0.2
 ```
 No se encuentra ninguna vulnerabilidad inicial con nmap.
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260404204040.png]*
+<img width="583" height="194" alt="Pasted image 20260404204040" src="https://github.com/user-attachments/assets/34d6a28d-d7ce-40d1-b042-e7726f5d672a" />
 
 * Realizamos una búsqueda de la versión actual de SSH instalada, en busca de vulnerabilidades. En este caso es la OpenSSH 7.7.
 * Encontramos que esta versión es propensa a permitir enumeración de usuarios, CVE-2018-15473.
@@ -47,7 +47,9 @@ Nos encuentra el siguiente usuario: "lovely"
 
 También probamos con el usuario "root"
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260404234006.png]* Ya con esa pista nos vamos directamente a Hydra.
+<img width="759" height="293" alt="Pasted image 20260404234006" src="https://github.com/user-attachments/assets/7b36a442-6a23-400b-a48b-16a1786130aa" />
+
+* Ya con esa pista nos vamos directamente a Hydra.
 
 Ejecutamos el siguiente comando:
 ```bash
@@ -55,11 +57,11 @@ hydra -l lovely -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 4 -vV
 ```
 Bingo! hemos encontrado la contraseña del usuario "lovely".
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260404235851.png]*
+<img width="950" height="440" alt="Pasted image 20260404235851" src="https://github.com/user-attachments/assets/44e0d5fb-3db4-4173-8c5b-bddfb583654a" />
 
 Nos conectamos por SSH y vemos que no tiene un vector de ataque inicial claro.
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260405003109.png]*
+<img width="580" height="586" alt="Pasted image 20260405003109" src="https://github.com/user-attachments/assets/ffc0354b-3c29-4bee-9365-966cc8e2aad4" />
 
 Probamos Hydra con el usuario "root" 
 ```bash
@@ -67,11 +69,11 @@ hydra -l root -P /usr/share/wordlists/rockyou.txt ssh://172.17.0.2 -t 4 -vV
 ```
 Vemos que nos encuentra la contraseña bingo!!!
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260405003403.png]*
+<img width="793" height="89" alt="Pasted image 20260405003403" src="https://github.com/user-attachments/assets/11634305-137e-4ff6-a387-ab9dec308147" />
 
 Probamos esas credenciales y sucede la magia:
 
-*[AQUÍ ARRASTRA TU IMAGEN: Pasted image 20260405003634.png]*
+<img width="621" height="264" alt="Pasted image 20260405003634" src="https://github.com/user-attachments/assets/1daca37a-2210-4264-9f0c-d8182e83b1be" />
 
 ---
 
