@@ -1,4 +1,4 @@
-# 🎯 [Vacaciones]
+# 🎯 Vacaciones
 
 ## 📊 Resumen
 **Plataforma:** [Dockerlabs]
