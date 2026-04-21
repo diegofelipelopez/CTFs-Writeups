@@ -2,7 +2,9 @@
 
 ## 📊 Resumen
 **Plataforma:** Dockerlabs
+
 **OS:** Linux
+
 **Nivel:** Muy Fácil
 
 **Cadena de Ataque:** Information Disclosure (Código Fuente) ➔ SSH Brute Force ➔ Movimiento Lateral (Lectura de txt) ➔ 
