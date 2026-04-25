@@ -17,7 +17,7 @@
 
 ### Pregunta 1
 
-*Realizamos un escaneo inicial con el comando:
+Realizamos un escaneo inicial con el comando:
 
 ```bash
 sudo nmap -p- --open -sS --min-rate 5000 -n -Pn -v 10.129.40.145
