@@ -75,7 +75,7 @@ FTP
 
 ### Pregunta 6
 
-*Recordando los puertos abiertos de la máquina, SSH también se encuentra funcionando, vamos y probamos las credenciales obtenidas ahí.
+Recordando los puertos abiertos de la máquina, SSH también se encuentra funcionando, vamos y probamos las credenciales obtenidas ahí.
 
 ```
 SSH
@@ -83,7 +83,7 @@ SSH
 
 ### Bandera de Usuario
 
-*Ingresamos por SSH al servidor con las credenciales de nathan.
+Ingresamos por SSH al servidor con las credenciales de nathan.
 
 ```
 ssh nathan@10.129.41.181
@@ -110,7 +110,7 @@ Pasted image 20260424204001.png
 
 ### Bandera de Administrador
 
-*Usando la herramienta searchbins buscamos un payload de escalada de privilegios para el binario python3.
+Usando la herramienta searchbins buscamos un payload de escalada de privilegios para el binario python3.
 Pasted image 20260424210748.png
 
 Modificamos el payload para nuestro uso y lo ejecutamos en la terminal:
