@@ -1,11 +1,15 @@
 # 🎯 Cap
 
 ## 📊 Resumen
-**Plataforma:** Hack The Box
+**Plataforma:** HackTheBox
+
 **Máquina:** Cap
+
 **OS:** Linux
+
 **Nivel:** Fácil
-**Cadena de Ataque:** [Exposición de Datos Sensibles vía Web (IDOR) ➔ Análisis de Tráfico de Red (FTP en texto plano) ➔ Reutilización de Credenciales (SSH) ➔ Escalada de Privilegios por Abuso de Capabilities (`cap_setuid` en Python3.8) ➔ Root]
+
+**Cadena de Ataque:** Exposición de Datos Sensibles vía Web (IDOR) ➔ Análisis de Tráfico de Red (FTP en texto plano) ➔ Reutilización de Credenciales (SSH) ➔ Escalada de Privilegios por Abuso de Capabilities (`cap_setuid` en Python3.8) ➔ Root
 
 ---
 
@@ -105,10 +109,12 @@ Pasted image 20260424211538.png
 
 ## 🧠 Lecciones Aprendidas & Blue Team
 
-**Concepto Nuevo:** * **Enumeración de Capabilities en Linux:** Búsqueda de binarios mediante `getcap` que poseen privilegios especiales para ejecutar tareas administrativas sin necesidad de contar con el bit SUID activo, y cómo herramientas o repositorios de referencia (como searchbins o GTFOBins) facilitan su abuso.
+**Concepto Nuevo:**  
+* **Enumeración de Capabilities en Linux:** Búsqueda de binarios mediante `getcap` que poseen privilegios especiales para ejecutar tareas administrativas sin necesidad de contar con el bit SUID activo, y cómo herramientas o repositorios de referencia (como searchbins o GTFOBins) facilitan su abuso.
 * **Fuga de Información Crítica (Information Disclosure):** Interceptación y lectura de archivos de captura de red (PCAP) expuestos públicamente que evidencian el uso de protocolos no seguros.
 
-**Cómo Parcharlo (Fix):** 1. **Control de Acceso Web (Mitigación IDOR):** Implementar mecanismos de autenticación y autorización obligatorios en el panel web. Ningún recurso que contenga datos sensibles (`/data`) debe ser accesible o indexable por usuarios no autenticados en el sistema.
+**Cómo Parcharlo (Fix):** 
+1. **Control de Acceso Web (Mitigación IDOR):** Implementar mecanismos de autenticación y autorización obligatorios en el panel web. Ningún recurso que contenga datos sensibles (`/data`) debe ser accesible o indexable por usuarios no autenticados en el sistema.
 2. **Cifrado en Tránsito:** Deshabilitar inmediatamente el servicio FTP tradicional (texto plano en el puerto 21). Migrar a protocolos de transferencia seguros que empleen cifrado en todo el canal de comunicación, como **SFTP** (SSH File Transfer Protocol) o **FTPS** (FTP over TLS), mitigando el riesgo de _sniffing_ de credenciales en la red.
 3. **Control de Capacidades (Least Privilege):** Retirar la capacidad `cap_setuid` del binario de Python. Se puede realizar ejecutando el comando: `sudo setcap -r /usr/bin/python3.8`. Si se requiere la ejecución de scripts específicos con privilegios, debe configurarse a nivel de archivo `sudoers` apuntando al script exacto de solo lectura, no otorgando la capacidad de escalamiento de UID a todo el intérprete de programación.
 4. **Política de Reutilización de Contraseñas:** Auditar e implementar políticas que impidan a los usuarios (como `nathan`) utilizar las mismas credenciales de servicios periféricos (FTP) para accesos directos al sistema (SSH).
