@@ -19,7 +19,7 @@
 
 Realizamos un escaneo inicial con el comando:
 
-```bash
+```
 sudo nmap -p- --open -sS --min-rate 5000 -n -Pn -v 10.129.40.145
 ```
 
@@ -28,46 +28,64 @@ Pasted image 20260423213641.png
 
 Luego de ver los puertos abiertos realizamos un escaneo dirigido hacia ellos:
 
-```bash
+```
 sudo nmap -p 21,22,80 -sC -sV -n -Pn 10.129.40.145
 ```
 
 Nos encuentra la siguiente información sobre los puertos:
 Pasted image 20260423214214.png
+
+```
 3
+```
 
 ### Pregunta 2
 
 Ingresamos por HTTP a la IP 10.129.40.145, dentro nos dirigimos al apartado "Security Snapshot", esperamos que cargue y en pantalla tendremos la respuesta a la segunda pregunta.
 Pasted image 20260423222007.png
+
+```
 data
+```
 
 ### Pregunta 3
 
 Al no pedir ninguna autenticación al ingresar al panel web, y como vimos en la captura anterior, podemos cambiar de archivo data, entre todos los existentes, sin importar el usuario, ya que no nos autenticamos nunca, es decir cualquiera con la ruta puede entrar y mirar el resultado de los escaneos.
+
+```
 yes
+```
 
 ### Pregunta 4
 
 *Revisamos las capturas de red creadas en la sección data, vemos que en el archivo de datos 0, se encuentran unos datos interesantes:
 Pasted image 20260424201206.png
+
+```
 0
+```
 
 ### Pregunta 5
 
 Como vemos en la captura anterior por el protocolo FTP, se realiza el envío de unas credenciales.
+
+```
 FTP
+```
 
 ### Pregunta 6
 
 *Recordando los puertos abiertos de la máquina, SSH también se encuentra funcionando, vamos y probamos las credenciales obtenidas ahí.
+
+```
 SSH
+```
 
 ### Bandera de Usuario
 
 *Ingresamos por SSH al servidor con las credenciales de nathan.
 
-```bash
+```
 ssh nathan@10.129.41.181
 ```
 
@@ -77,9 +95,9 @@ Pasted image 20260424202211.png
 
 ### Pregunta 8
 
-*Con la pista de la pregunta 8, sabemos que vamos a escalar privilegios mediante un binario, teniendo en cuenta que no encuentra resultados el comando `find / -perm -4000 2>/dev/null`, probamos con los binarios con capabilities:
+Con la pista de la pregunta 8, sabemos que vamos a escalar privilegios mediante un binario, teniendo en cuenta que no encuentra resultados el comando `find / -perm -4000 2>/dev/null`, probamos con los binarios con capabilities:
 
-```bash
+```
 getcap -r / 2>/dev/null
 ```
 
@@ -103,7 +121,10 @@ Escalamos a root!
 
 Ahora buscaremos la bandera:
 Pasted image 20260424211538.png
+
+```
 1a937e93778fda81d947433c7f7bdd95
+```
 
 ---
 
