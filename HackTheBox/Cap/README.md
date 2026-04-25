@@ -91,7 +91,10 @@ ssh nathan@10.129.41.181
 
 Buck3tH4TF0RM3!
 Pasted image 20260424202211.png
+
+```
 9dea9b3c3e4728162b7bdcc19da46ec7
+```
 
 ### Pregunta 8
 
