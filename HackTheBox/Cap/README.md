@@ -109,7 +109,9 @@ getcap -r / 2>/dev/null
 Nos muestra los siguientes binarios con permisos específicos.
 <img width="869" height="117" alt="Pasted image 20260424204001" src="https://github.com/user-attachments/assets/e95c2e31-0ac8-4aa7-aae8-a59953f6f261" />
 
+```
 /usr/bin/python3.8
+```
 
 ### Bandera de Administrador
 
