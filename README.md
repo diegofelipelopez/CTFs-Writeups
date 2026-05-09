@@ -1,5 +1,5 @@
 # 🚩 CTFs-Writeups
-Resolución paso a paso de máquinas de práctica y retos de seguridad ofensiva.
+Resolución paso a paso de máquinas de práctica y retos de seguridad ofensiva y defensiva.
 
 ## ⚔️ Red Team
 
