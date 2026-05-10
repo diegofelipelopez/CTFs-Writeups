@@ -1,6 +1,7 @@
 # 🚩 CTFs-Writeups
 Resolución paso a paso de máquinas de práctica y retos de seguridad ofensiva y defensiva.
 
+
 ## ⚔️ Red Team
 
 ### 🐳 DockerLabs
@@ -15,10 +16,12 @@ Resolución paso a paso de máquinas de práctica y retos de seguridad ofensiva 
 ### 🕸️ PortSwigger
 * [📁 Entrar a la carpeta de PortSwigger](./PortSwigger)
 
+
 ## 🛡️ Blue Team
 
 ### 🔵 CyberDefenders
 * [📁 Entrar a la carpeta de CybersDefenders](./CyberDefenders)
+
 
 ## 🕵️‍♂️ OSINT
 
